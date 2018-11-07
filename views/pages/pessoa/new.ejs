@@ -1,0 +1,22 @@
+<!-- ESTE É O ARQUIVO /VIEWS/PAGES/PESSOA/NEW.ejs -->
+
+<h1>NOVA PESSOA</h1>
+
+<form action = "/pessoa/save" method="POST">
+	<input type="text" name="nome"
+		placeholder="DIGITE O NOME" />
+		<br/>
+
+		<input type="text" name="sobrenome"
+			placeholder="DIGITE O SOBRENOME" />
+		<br/>
+
+		<select name="sexo">
+			<option value=""> SELECIONE O SEXO</option>
+			<option value="M"> MASCULINO</option>
+			<option value="F"> FEMININO</option>
+		</select>
+		<br/>
+
+		<input type="submit" value="SALVAR"/>
+</form>

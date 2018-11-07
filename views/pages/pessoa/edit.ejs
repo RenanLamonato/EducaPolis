@@ -1,0 +1,30 @@
+<!-- ESTE É O ARQUIVO /VIEWS/PAGES/PESSOA/EDIT.ejs -->
+
+<h1>EDITAR PESSOA</h1>
+
+<form action = "/pessoa/save" method="POST">
+	<input type="hidden" name="id"
+		value="<%= pessoa.id %>"/>
+	<input type="text" name="nome"
+		placeholder="DIGITE O NOME" 
+		value="<%= pessoa.nome %>"/>
+		<br/>
+
+		<input type="text" name="sobrenome"
+			placeholder="DIGITE O SOBRENOME" 
+			value="<%= pessoa.sobrenome %>"/>
+		<br/>
+
+		<select name="sexo">
+			<option value=""> SELECIONE O SEXO</option>
+			<option value="M"> MASCULINO</option>
+			<option value="F"> FEMININO</option>
+		</select>
+		<script>
+			document.getElementsByName("sexo")[0].value = 
+				"<%= pessoa.sexo %>";
+		</script>
+		<br/>
+
+		<input type="submit" value="SALVAR"/>
+</form>

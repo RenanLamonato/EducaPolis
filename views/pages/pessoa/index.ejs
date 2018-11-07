@@ -1,0 +1,23 @@
+<!-- ESTE É O ARQUIVO /VIEWS/PAGES/PESSOA/index.ejs -->
+
+<h1>LISTAGEM DE PESSOAS</h1>
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Sobrenome</th>
+		<th>Sexo</th>
+		<th>Ações</th>
+	</tr>
+
+	<% for (i = 0; i <pessoas.length; i++){ %>
+	<tr>
+		<td><%= pessoas[i].nome %> </td>
+		<td><%= pessoas[i].sobrenome %> </td>
+		<td><%= pessoas[i].sexo %> </td>
+		<td>
+			<a href="/pessoa/edit/<%= pessoas[i].id %>">Editar</a>
+			<a href="/pessoa/delete/<%= pessoas[i].id %>" onclick="return confirm('Deseja realmente excluir?')">Remover</a>
+		</td>
+	</tr>
+	<% } %>
+</table>
