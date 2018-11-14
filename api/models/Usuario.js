@@ -9,6 +9,23 @@ module.exports = {
 
   attributes: {
 
+    nome:{
+        type:"string",
+        required:true,
+        minLength:2
+    },
+
+    senha:{
+        type:"string",
+        required: true,
+        minLength:5,
+        maxLength:20
+    },    
+
+    email:{
+        type:"string",
+        required:true
+    },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
