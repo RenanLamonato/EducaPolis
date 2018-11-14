@@ -9,6 +9,23 @@ module.exports = {
 
   attributes: {
 
+    autor:{
+        type:"string",
+        required:true,
+        minLength:2
+    },
+
+    titulo:{
+        type:"string",
+        required:true,
+        minLength:2
+    },
+
+    conteudo:{
+        type:"string",
+        required:true,
+        minLength:2
+    },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
