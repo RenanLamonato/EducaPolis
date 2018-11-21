@@ -6,17 +6,16 @@
  */
 
 module.exports = {
-    index: function(req, res){
-        Usuario.find().then(function(data){
-            res.view("pages/usuario/index",
-            {
-                notice:req.param("notice"),
-                pessoas: data
-            });
-        });
+    
+
+    cadastro: function(req, res){
+        res.view("pages/usuario/cadastro");
     },
 
-
-
+    perfil: function(req, res){
+        res.view("pages/usuario/perfil");
+    },
+    
+    
 };
 

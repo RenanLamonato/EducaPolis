@@ -41,7 +41,13 @@ module.exports.routes = {
   'GET /pessoa/delete/:id':{action: "pessoa/delete"},
   'GET /pessoa/edit/:id': {action :"pessoa/edit"},
 
-  'GET /Usuario': {action: "Usuario/index"},
+  'GET /codes': {action: "codes/index"},
+  'GET /codes/index': {action: "codes/index"},
+  'GET /codes/geoPolis': {action: "codes/geopolis"},
+  'GET /codes/histoth': {action: "codes/histoth"},
+  'GET /usuario/cadastro': {action: "usuario/cadastro"},
+  'GET /usuario/perfil': {action: "usuario/perfil"},
+  
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
