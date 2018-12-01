@@ -6,23 +6,17 @@
  */
 
 module.exports = {
-    index: function(req, res){
-        Usuario.find().then(function(data){
-            res.view("pages/codes/index",
-            {
-                notice:req.param("notice"),
-                pessoas: data
-            });
-        });
-    },
+  index: function (req, res) {
+      res.view("pages/codes/index");
+  },
 
-    geopolis: function(req, res){
-        res.view("pages/codes/geoPolis");
-    },
+  geopolis: function (req, res) {
+    res.view("pages/codes/geoPolis");
+  },
 
-    histoth: function(req, res){
-        res.view("pages/codes/histoth");
-    }
+  histoth: function (req, res) {
+    res.view("pages/codes/histoth");
+  }
 
 };
 
