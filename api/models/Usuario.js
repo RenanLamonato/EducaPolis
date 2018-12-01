@@ -2,12 +2,18 @@
  * Usuario.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
- * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
+ * @docs        :: c
  */
 
 module.exports = {
 
   attributes: {
+
+    id:{
+        type: 'number',
+        unique: true,
+        autoIncrement: true
+    },
 
     nome:{
         type:"string",
@@ -15,6 +21,12 @@ module.exports = {
         minLength:2
     },
 
+    email:{
+        type:"string",
+        required:true,
+        unique: true
+    },
+    
     senha:{
         type:"string",
         required: true,
@@ -22,10 +34,7 @@ module.exports = {
         maxLength:20
     },    
 
-    email:{
-        type:"string",
-        required:true
-    },
+    
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
