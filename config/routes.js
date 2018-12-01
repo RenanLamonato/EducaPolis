@@ -45,8 +45,17 @@ module.exports.routes = {
   'GET /codes/index': {action: "codes/index"},
   'GET /codes/geoPolis': {action: "codes/geopolis"},
   'GET /codes/histoth': {action: "codes/histoth"},
-  'GET /usuario/cadastro': {action: "usuario/cadastro"},
-  'GET /usuario/perfil': {action: "usuario/perfil"},
+
+  // 'GET /usuario': {action: "Usuario/index2"},
+  // 'GET /usuario/index2': {action: "Usuario/index2"}, //arquivo de teste
+  'GET /usuario/cadastro': {action: "Usuario/cadastro"},
+  'GET /usuario/perfil': {action: "Usuario/perfil"},
+  'POST /usuario/save': {action: "Usuario/saveOrUpdate"},
+  // 'GET /usuario/login': {action: "Usuario/login"},
+  // 'POST /usuario/loginUser': {action: "Usuario/loginUser"},
+
+
+
   
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
