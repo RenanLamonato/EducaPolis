@@ -46,13 +46,13 @@ module.exports.routes = {
   'GET /codes/geoPolis': {action: "codes/geopolis"},
   'GET /codes/histoth': {action: "codes/histoth"},
 
-  // 'GET /usuario': {action: "Usuario/index2"},
+  'GET /usuario': {action: "Usuario/perfil"},
   // 'GET /usuario/index2': {action: "Usuario/index2"}, //arquivo de teste
   'GET /usuario/cadastro': {action: "Usuario/cadastro"},
   'GET /usuario/perfil': {action: "Usuario/perfil"},
   'POST /usuario/save': {action: "Usuario/saveOrUpdate"},
-  // 'GET /usuario/login': {action: "Usuario/login"},
-  // 'POST /usuario/loginUser': {action: "Usuario/loginUser"},
+  'GET /usuario/login': {action: "Usuario/login"},
+  'POST /usuario/loginUser': {action: "Usuario/loginUser"},
 
 
 
