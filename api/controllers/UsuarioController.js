@@ -21,10 +21,13 @@ module.exports = {
       },
       select: ['id', 'nome', 'email'],
     });
+
     req.session["usuario"] = dadosUsuario;
-	res.redirect(
-            "/usuario/perfil?id=" + dadosUsuario[0].id + ""
-          );
+
+   	res.redirect(
+        "/usuario/perfil?id=" + dadosUsuario[0].id + ""
+    );
+   
   },
 
   perfil: async function (req, res) {
@@ -44,6 +47,7 @@ module.exports = {
 
   },
 
+
   cadastro: function (req, res) {
     res.view("pages/usuario/cadastro");
   },
@@ -51,6 +55,7 @@ module.exports = {
   saveOrUpdate: function (req, res) {
     var pkid = parseInt(req.param("id"));
     var model = {
+      id: parseInt(req.param("id")),
       nome: req.param("nome"),
       email: req.param("email"),
       senha: req.param("senha")
@@ -61,8 +66,8 @@ module.exports = {
       }, model).exec(function (err, newmodel) {
         if (!err) {
           res.redirect(
-            "/usuario/perfil?id=" + newmodel.id + "&notice=Salvo_com_sucesso!"
-          );
+			"/usuario/perfil?id=" + model.id + "&notice=Alterado_com_sucesso!"
+		  );
         } else {
           res.redirect(
             "/usuario/perfil?notice=Erro" + err
@@ -87,5 +92,39 @@ module.exports = {
 
   },
 
+  edit: async function(req, res){
+  		var pkid = parseInt(req.param('id'))
+  			if(pkid && !isNaN(pkid)){
+  				var p = await Usuario.findOne({
+  					id: pkid
+  				});
+  				if(p){
+  					res.view("pages/usuario/editar",{
+  						usuario: p
+  					});
+  				}else{
+  					res.redirect("/usuario/perfil?notice=Erro!");
+  				}
+  			}else{
+  				res.redirect("/usuario/perfil?notice=Nao_encontrado!");
+  			}
+  	},
+
+  	delete: function(req, res){
+  		var pkid = parseInt(req.param('id'))
+  			if(pkid && !isNaN(pkid)){
+  				Usuario.destroy({
+  					id: pkid
+  				}).exec(function(err){
+  					if(!err){
+  						res.redirect("/codes/index?notice=Removido.")
+  					}else{
+  						res.redirect("/usuario/perfil?notice=Erro.")
+  					}
+  				});
+  			}else{
+  				res.redirect("/usuario/perfil?notice=Nao_encontrado");
+  			}
+  		}
 
 };
