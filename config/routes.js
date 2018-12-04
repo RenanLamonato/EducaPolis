@@ -14,7 +14,7 @@ module.exports.routes = {
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
-  'GET /':                   { action: 'view-homepage-or-redirect' },
+  'GET /':                   {action: "codes/index"},
   'GET /welcome':            { action: 'dashboard/view-welcome' },
 
   'GET /faq':                { view:   'pages/faq' },
@@ -50,8 +50,10 @@ module.exports.routes = {
   // 'GET /usuario/index2': {action: "Usuario/index2"}, //arquivo de teste
   'GET /usuario/cadastro': {action: "Usuario/cadastro"},
   'GET /usuario/perfil': {action: "Usuario/perfil"},
-  'POST /usuario/save': {action: "Usuario/saveOrUpdate"},
+  'GET /usuario/edit/:id': {action: "usuario/edit"},
+  'GET /usuario/delete/:id': {action: "usuario/delete"}, 
   'GET /usuario/login': {action: "Usuario/login"},
+  'POST /usuario/save': {action: "Usuario/saveOrUpdate"},
   'POST /usuario/loginUser': {action: "Usuario/loginUser"},
 
 
