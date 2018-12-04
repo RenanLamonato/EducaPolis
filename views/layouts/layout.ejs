@@ -19,7 +19,11 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
     <link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+    <link rel="stylesheet" href="/dependencies/fontawesome.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/noscript.css">
     <!--STYLES END-->
   </head>
 
@@ -29,7 +33,7 @@
         <a class="navbar-brand mr-0" href="/">NEW_APP_NAME</a>
         <div class="navbar-nav flex-row">
           <!-- LOGGED-IN NAVIGATION -->
-          <% if(me) { %>
+          <% if(true/*me*/) { %>
           <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
           <!-- Only in desktop nav -->
           <div class="nav-item dropdown d-none d-sm-block">
@@ -56,20 +60,6 @@
         </div>
       </header>
 
-      <!-- Alert if email has not been confirmed -->
-      <% if(me&&me.emailChangeCandidate) { %>
-      <div class="container-fluid">
-        <div class="alert alert-secondary mt-2" role="alert">
-        Your updated email address needs verification. Until you click the link sent to <strong><%= me.emailChangeCandidate %></strong>, you'll still need to sign in as <strong><%= me.emailAddress %></strong>.
-        </div>
-      </div>
-      <% } else if(me&&me.emailStatus === 'unconfirmed') { %>
-      <div class="container-fluid">
-        <div class="alert alert-secondary mt-2" role="alert">
-        Your email address still needs verification. Your account access may be limited until you click the link sent to <strong><%= me.emailChangeCandidate ? me.emailChangeCandidate : me.emailAddress%></strong>.
-        </div>
-      </div>
-      <% } %>
 
       <%- body %>
 
@@ -78,7 +68,7 @@
           <small class="nav-item"><a class="nav-link text-info" href="/contact">Contact<span class="d-none d-sm-inline"> us</span></a></small>
           <small class="nav-item"><a class="nav-link text-info" href="/legal/terms">Terms<span class="d-none d-sm-inline"> of Use</span></a></small>
           <small class="nav-item"><a class="nav-link text-info" href="/legal/privacy">Privacy<span class="d-none d-sm-inline"> policy</span></a></small>
-          <% if(me) { %>
+          <% if(true) { %>
           <small class="nav-item"><a class="nav-link text-info" href="/logout">Sign out</a></small>
           <% } %>
         </div>
@@ -108,16 +98,24 @@
     <script src="/dependencies/sails.io.js"></script>
     <script src="/dependencies/lodash.js"></script>
     <script src="/dependencies/jquery.min.js"></script>
-    <script src="/dependencies/bowser.js"></script>
     <script src="/dependencies/vue.js"></script>
+    <script src="/dependencies/vue-router.js"></script>
     <script src="/dependencies/bootstrap-4/bootstrap-4.bundle.js"></script>
+    <script src="/dependencies/bowser.js"></script>
     <script src="/dependencies/cloud.js"></script>
+    <script src="/dependencies/moment.js"></script>
     <script src="/dependencies/parasails.js"></script>
     <script src="/js/cloud.setup.js"></script>
     <script src="/js/components/ajax-button.component.js"></script>
     <script src="/js/components/ajax-form.component.js"></script>
+    <script src="/js/components/js-timestamp.component.js"></script>
     <script src="/js/components/modal.component.js"></script>
     <script src="/js/utilities/open-stripe-checkout.js"></script>
+    <script src="/js/breakpoints.min.js"></script>
+    <script src="/js/browser.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/pages/498.page.js"></script>
     <script src="/js/pages/account/account-overview.page.js"></script>
     <script src="/js/pages/account/edit-password.page.js"></script>
@@ -133,6 +131,7 @@
     <script src="/js/pages/homepage.page.js"></script>
     <script src="/js/pages/legal/privacy.page.js"></script>
     <script src="/js/pages/legal/terms.page.js"></script>
+    <script src="/js/util.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
