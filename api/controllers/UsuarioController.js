@@ -10,6 +10,23 @@ module.exports = {
     res.view("pages/usuario/login");
   },
 
+  loginUser: async function (req, res) {
+    var uemail = req.param("email");
+    var usenha = req.param("senha");
+
+    var dadosUsuario = await Usuario.find({
+      where: {
+        email: uemail,
+        senha: usenha
+      },
+      select: ['id', 'nome', 'email'],
+    });
+    req.session["usuario"] = dadosUsuario;
+	res.redirect(
+            "/usuario/perfil?id=" + dadosUsuario[0].id + ""
+          );
+  },
+
   perfil: async function (req, res) {
     var pkid = parseInt(req.param("id"));
 
@@ -26,7 +43,6 @@ module.exports = {
     });
 
   },
-
 
   cadastro: function (req, res) {
     res.view("pages/usuario/cadastro");
@@ -45,7 +61,7 @@ module.exports = {
       }, model).exec(function (err, newmodel) {
         if (!err) {
           res.redirect(
-            "/usuario/perfil?id=" + model.id + "&notice=Salvo_com_sucesso!"
+            "/usuario/perfil?id=" + newmodel.id + "&notice=Salvo_com_sucesso!"
           );
         } else {
           res.redirect(
