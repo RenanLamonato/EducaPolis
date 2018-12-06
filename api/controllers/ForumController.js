@@ -6,7 +6,18 @@
  */
 
 module.exports = {
-  
+   forum: function (req, res) {
+    res.view("pages/forum/forum");
+  },
+   publicacao: function (req, res) {
+    res.view("pages/forum/publicacao");
+  },
+   escreverPublicacao: function (req, res) {
+    res.view("pages/forum/escreverPublicacao");
+  },
+   escreverResposta: function (req, res) {
+    res.view("pages/forum/escreverResposta");
+  }
 
 };
 
