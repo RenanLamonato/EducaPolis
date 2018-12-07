@@ -56,9 +56,14 @@ module.exports.routes = {
   'POST /usuario/save': {action: "Usuario/saveOrUpdate"},
   'POST /usuario/loginUser': {action: "Usuario/loginUser"},
 
+  'GET /forum/forum': {action: "forum/forum"},
+  'GET /forum/publicacao': {action: "forum/publicacao"},
+  'GET /forum/escreverPublicacao': {action: "forum/escreverPublicacao"},
+  'GET /forum/escreverResposta': {action: "forum/escreverResposta"},
 
 
-  
+
+
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
